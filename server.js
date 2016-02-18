@@ -2,10 +2,14 @@
 
 const bodyParser = require('body-parser');
 const express = require('express');
-
+const mongoose = require('mongoose');
 
 const app = express();  // start express
 const port = process.env.PORT || 3000;
+const Note = mongoose.model('Notes', mongoose.Schema({  // model
+  title: String,
+  text: String
+}));
 
 app.set('view engine', 'jade');
 
@@ -23,12 +27,18 @@ app.get('/notes/new', (req, res) => {  // for 'new' action
 });
 
 app.post('/notes', (req, res) => {  // for 'post' action
-  console.log(req.body);
-  res.redirect('/');
+  Note.create(req.body, (err) => {
+    if (err) throw err;
+    console.log(req.body);
+    res.redirect('/');
+  });
 });
 
 
+mongoose.connect('mongodb://localhost:27017/evernode', (err) => {
+  if (err) throw err;
 
-app.listen(port, () => {
-  console.log(`Evernode server running on port: ${port}`);
+  app.listen(port, () => {
+    console.log(`Evernode server running on port: ${port}`);
+  });
 });
