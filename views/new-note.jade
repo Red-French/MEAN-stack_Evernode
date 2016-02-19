@@ -14,4 +14,9 @@ form(method='POST', action='/notes#{override}')
     label(for='text') Text
     textarea#text(name='text')= item.text
   .input-group
+    label(for='cat') Category
+    select#cat(name='category')
+      for cat in categories
+        option(value=cat._id, selected=selected)= cat.name
+  .input-group
     input(type='submit', value='Save')
