@@ -1,4 +1,7 @@
 'use strict';
+// USER INFORMATION:
+// This app requires mongo to be running. In your terminal, use the following command: mongod
+// then run the server
 
 const bodyParser = require('body-parser');  // strips header info, supplies body
 const express = require('express');
@@ -13,6 +16,13 @@ const app = express();  // start express
 const port = process.env.PORT || 3000;  // dynamic port
 
 app.set('view engine', 'jade');  // use jade engine so jade use is available
+
+
+
+
+// TITLE IS NOT INSERTING IN THE JADE INCLUDE
+app.locals.title = 'Evernode, the NSS app';
+
 
 
 // MIDDLEWARE
