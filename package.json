@@ -26,7 +26,7 @@
       "no-console": 0
     }
   },
-  "author": "Red French",
+  "author": "Red French <red@redfrench.net> (http://www.redfrench.net)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Red-French/MEAN-stack_Evernode/issues"
