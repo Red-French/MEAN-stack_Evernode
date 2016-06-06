@@ -26,6 +26,9 @@
       "no-console": 0
     }
   },
+  "jshintConfig": {
+    "esversion": 6
+  },
   "author": "Red French <red@redfrench.net> (http://www.redfrench.net)",
   "license": "MIT",
   "bugs": {
