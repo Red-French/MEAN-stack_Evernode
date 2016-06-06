@@ -38,5 +38,8 @@
     "jade": "^1.11.0",
     "mongoose": "^4.4.4",
     "nodemon": "^1.8.1"
+  },
+  "devDependencies": {
+    "colors": "^1.1.2"
   }
 }
